@@ -1,0 +1,33 @@
+body {
+    background-color: darkgreen;
+}
+
+div#content {
+    width: 50%;
+    background-color: floralwhite;
+    font-family: Verdana, sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+div#content table {
+    width: 100%;
+    margin: auto auto;
+}
+
+span.die {
+    width: 100px;
+    height: 100px;
+    font-size: 75px;
+    border: 1px darkgrey solid;
+    display: inline-block;
+    background-color: white;
+}
+
+.win {
+    background-color: lightgreen;
+}
+
+.lose {
+    background-color: lightpink;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Place Your Bet</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/dice.css}">
+</head>
+<body>
+<div id="content">
+    <form method="post" th:action="@{/placeBet}" th:object="${bettingPlayer}">
+        <span th:text="*{name}">NAME</span> place your bet.
+        <br/>
+        You have $<span th:text="*{cash}">CASH</span> available.
+        <br/>
+
+        <input type="number" name="bet" th:field="*{bet} " value="" min="1" autofocus>
+        <input type="submit" value="Place Bet"/>
+    </form>
+    <form method="post" th:action="@{/cashOut}">
+        <input type="submit" value="Cash Out"/>
+    </form>
+</div>
+</body>
+</html>

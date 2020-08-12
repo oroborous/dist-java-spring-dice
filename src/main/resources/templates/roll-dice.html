@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Round Result</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/dice.css}">
+</head>
+<body>
+<div id="content">
+    <div id="result">
+        <span class="die" th:text="${die1}">DIE1</span>
+        <span class="die" th:text="${die2}">DIE2</span>
+    </div>
+
+    <table id="players" th:class="${win == true} ? 'win' : 'lose'">
+        <div th:each="player : ${diceGame.playerList}">
+            <tr>
+                <td th:text="${player}">PLAYER TO STRING</td>
+            </tr>
+        </div>
+    </table>
+
+    <br/>
+    <a th:href="@{/startRound}">Next Round</a>
+</div>
+</body>
+</html>

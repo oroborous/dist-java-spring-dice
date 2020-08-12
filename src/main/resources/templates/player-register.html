@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register a Player</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/dice.css}">
+</head>
+<body>
+<div id="content">
+    <form method="post" th:action="@{/addPlayer}" th:object="${newPlayer}">
+        Player Name
+        <input type="text" name="playerName" th:field="*{name}" autofocus>
+        <input type="submit" value="Add Player"/>
+    </form>
+
+    <table id="players">
+        <div th:each="player : ${diceGame.playerList}">
+            <tr>
+                <td th:text="${player.name}">PLAYER NAME</td>
+            </tr>
+        </div>
+    </table>
+
+    <br/>
+    <a href="startRound">Start Game</a>
+</div>
+</body>
+</html>
